@@ -14,8 +14,8 @@ import { Pagination } from 'swiper/modules';
 
 
 export default function MenuOpenPage() {
-  // const [sliderState, setSliderState] = React.useState(0);
-  // const sliderRef = React.useRef(null);
+  const [sliderState, setSliderState] = React.useState(0);
+  const sliderRef = React.useRef(null);
   const [collapsed, setCollapsed] = React.useState(true);
 
   function toggleCollapse() {
@@ -281,7 +281,7 @@ export default function MenuOpenPage() {
           <div className="mt-32 flex w-[89%] flex-col items-center md:w-full md:p-5">
             <div className="relative h-[383px] self-stretch md:h-auto">
               <div className="w-full">
-              {/* <Slider
+                <Slider
                   autoPlay
                   autoPlayInterval={2000}
                   responsive={{
@@ -344,74 +344,7 @@ export default function MenuOpenPage() {
                       </div>
                     </React.Fragment>
                   ))}
-                /> */}
-            {/* -----------------------Swipper------------------------     */}
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-              renderBullet: function (index, className) {
-                return '<span class=" bg-gray-700 border border-white-A700   '  + className + ' rounded-none text-xl p-2 relative top-3"></span>';
-              },
-            }}
-            navigation={true}
-
-            
-
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-          >
-
-            items={[...Array(3)].map(() => (
-              <SwiperSlide key={Math.random()}>
-                <div className="relative mx-auto h-[383px] bg-white-A700 px-6 pt-6 md:h-auto sm:px-5 sm:pt-5">
-                  <Img
-                    src="images/img_rectangle_7.png"
-                    alt="image"
-                    className="h-[344px] w-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-[37%] flex-col items-center gap-[41px] pb-[47px] md:pb-5">
-                    <Text
-                      size="xl"
-                      as="p"
-                      className="text-center !text-black-900"
-                    >
-                      ONLINE ONLY
-                    </Text>
-                    <Text
-                      size="md"
-                      as="p"
-                      className="text-center !text-black-900"
-                    >
-                      <span className="text-black-900">
-                        <>
-                          GET 20% OFF YOUR ORDER OF $50 OR MORE
-                          <br />
-                          Use code&nbsp;
-                        </>
-                      </span>
-                      <span className="font-extrabold text-black-900">
-                        “Chef20”
-                      </span>
-                    </Text>
-                    <Button
-                      color="black_900"
-                      shape="square"
-                      className="min-w-[359px] sm:px-5"
-                    >
-                      Shop Now
-                    </Button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
+                />
               </div>
             </div>
             <div className="relative z-[2] mt-[83px] flex self-stretch md:flex-col">
@@ -480,7 +413,7 @@ export default function MenuOpenPage() {
                     shape="square"
                     type="email"
                     name="email"
-                    placeholder={`Enter email address`}
+                    placeholder={"Enter email address"}
                     className="sm:pr-5"
                   />
                   <Button
@@ -547,6 +480,70 @@ export default function MenuOpenPage() {
           </div>
         </div>
 
+        <div className="w-full bg-red-700" >
+        
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+
+            items={[...Array(3)].map(() => (
+              <SwiperSlide key={Math.random()}>
+                <div className="relative mx-auto h-[383px] bg-white-A700 px-6 pt-6 md:h-auto sm:px-5 sm:pt-5">
+                  <Img
+                    src="images/img_rectangle_7.png"
+                    alt="image"
+                    className="h-[344px] w-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-[37%] flex-col items-center gap-[41px] pb-[47px] md:pb-5">
+                    <Text
+                      size="xl"
+                      as="p"
+                      className="text-center !text-black-900"
+                    >
+                      ONLINE ONLY
+                    </Text>
+                    <Text
+                      size="md"
+                      as="p"
+                      className="text-center !text-black-900"
+                    >
+                      <span className="text-black-900">
+                        <>
+                          GET 20% OFF YOUR ORDER OF $50 OR MORE
+                          <br />
+                          Use code&nbsp;
+                        </>
+                      </span>
+                      <span className="font-extrabold text-black-900">
+                        “Chef20”
+                      </span>
+                    </Text>
+                    <Button
+                      color="black_900"
+                      shape="square"
+                      className="min-w-[359px] sm:px-5"
+                    >
+                      Shop Now
+                    </Button>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+
+        </div>
       </div>
     </>
   );
